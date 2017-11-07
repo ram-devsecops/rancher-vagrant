@@ -1,21 +1,21 @@
 ---
 - name: rancherserver
-  box: goutham27/centos7
+  box: ramreddy06/centos7
   hostname: rancherserver
   communicator: ssh
   ram: 2048
 - name: client1
-  box: goutham27/centos7
+  box: ramreddy06/centos7
   hostname: client1
   communicator: ssh
   ram: 1024
 - name: client2
-  box: goutham27/centos7
+  box: ramreddy06/centos7
   hostname: client2
   communicator: ssh
   ram: 1024
 - name: client3
-  box: goutham27/centos7
+  box: ramreddy06/centos7
   hostname: client3
   communicator: ssh
   ram: 1024

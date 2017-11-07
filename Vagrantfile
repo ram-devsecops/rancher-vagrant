@@ -15,15 +15,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.boot_timeout = 1600
       srv.vm.hostname     = servers["hostname"]
 
-      srv.vm.provider :virtualbox do |v|
-        if servers["communicator"] != "winrm"
-        v.gui    = false
-        else
-        v.gui = true
-        end
-        v.name   = servers["name"]
-        v.memory = servers["ram"]
-        v.cpus   = 2
+      srv.vm.provider "vmware_fusion" do |v|
+        v.gui = false
+        v.linked_clone = false
+        v.name = servers["name"]
+        v.vmx["memsize"] = servers["ram"]
+        v.vmx["numvcpus"] = "2"
       end
     end
   end
