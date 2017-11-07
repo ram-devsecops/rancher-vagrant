@@ -18,6 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.provider "vmware_fusion" do |v|
         v.gui = false
         v.linked_clone = false
+        v.vmx['ethernet0.pcislotnumber'] = '33'
         v.name = servers["name"]
         v.vmx["memsize"] = servers["ram"]
         v.vmx["numvcpus"] = "2"
